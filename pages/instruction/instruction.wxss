@@ -1,0 +1,19 @@
+/* pages/instruction/instruction.wxss */
+.guide {
+  display: flex;
+  justify-content: space-between;
+  width: 750rpx;
+  height: 185rpx;
+  position: absolute;
+  bottom: 0rpx;
+}
+.guide-item {
+  text-align: center;
+  font-size: 14px;
+  width: 375rpx;
+  line-height: 1;
+  padding: 20px;
+}
+.guide-item image {
+  width: 70rpx;
+}

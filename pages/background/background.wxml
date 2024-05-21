@@ -1,0 +1,70 @@
+<!--pages/background/background.wxml-->
+<!--pages/background/background.wxml-->
+<!--pages/Background/Background.wxml-->
+<!-- 标题部分 -->
+<text class="centerText" >储能电站wBMS</text>
+<text class="centerText">{{[currentTime]}}</text>
+
+<!-- 虚线 -->
+<!-- <view class="line"></view> -->
+
+<!-- 主要功能界面(分为信息交互面板和使用者输入框) -->
+<view>
+  <!-- 信息交互面板 -->
+  <view>
+    <scroll-view scroll-y="true" style="height: 900rpx;">//计算的878
+      <text class='wordStyle'>
+      <!-- 第一行内容,显示的是MAC adress,未完成版本的兼容 -->
+        <text style="display: block;">
+          <text class="firstText">MAC address:</text>
+          <text class="dataText">{{macaddr}}</text>
+        </text>
+        <!-- 第二行内容,显示的是Device name -->
+        <text style="display: block;">
+          <text class="firstText">Device name:</text>
+          <text class="dataText">{{devicename}}</text>
+        </text>
+        <view wx:for="{{Arrays}}" wx:key="index" >
+        
+          <view style=" color: antiquewhite;">
+          写入的：{{item.write}}，读取的：{{item.read}}
+          </view>
+        </view>
+        <text>{{notifyvalue}}</text>
+      </text>
+    </scroll-view>
+</view>
+
+</view>
+
+<!-- 虚线 -->
+<view class="line"></view>
+
+<!-- 底部设置 -->
+<view>
+  <picker mode="multiSelector" range="{{multiArraynotify}}" bindchange="onnotify" class="pickerStyle">
+    <view>
+      <text>通知</text>
+    </view>
+    
+  </picker>
+  <picker mode="multiSelector" range="{{multiArrayread}}" bindchange="onread" class="pickerStyle">
+    <view>
+      <text>读取</text>
+    </view>
+  </picker>
+  <picker mode="multiSelector" range="{{multiArraywrite}}" bindchange="onwrite" class="pickerStyle">
+    <view>
+      <text>写入</text>
+    </view>
+    
+  </picker>
+</view>
+
+<view animation="{{popup}}" style="display: {{showPopup ? 'block' : 'none'}};">
+  <view class="popup">
+    <input bindinput="inputContent" value="{{userInput}}" placeholder="请输入您的更改" />
+    <button bindtap="confirmInput" style=" top: 30rpx;">确认</button>
+    <button bindtap="hideInputPopup"style=" top: 60rpx;">取消</button>
+  </view>
+</view>

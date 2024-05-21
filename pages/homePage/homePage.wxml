@@ -1,0 +1,60 @@
+<!--pages/homePage/homePage.wxml-->
+<view class="box_1">
+  <!-- logo 行 -->
+  <view class="box_2">
+    <image style="height: 121rpx; width: 750rpx;" src="/assets/img/logo.png"></image>
+  </view>
+  <!-- 扫码行 -->
+  <block class="box_3">
+    <image src="/assets/img/scanCode.png" bind:tap="onScanCode" style="height: 50rpx;width: 50rpx;position: absolute;right: 40rpx;"></image>
+  </block>>
+  <!-- 蓝牙设备行 -->
+  <view class="box_2">
+    <text class="text1" style="font-size: larger; font-weight: bolder;">蓝牙 设备:</text>
+    <!-- 仿picker栏 -->
+    <view bind:tap="onClickChange" style="display: inline-block;">
+      <view wx:if="{{connected}}" style="display: inline-block; width: 350rpx;text-align: center;">{{name}}</view>
+      <view wx:else style="display: inline-block; width: 350rpx;text-align: center;">请选择蓝牙</view>
+      <view style="display: inline-block;"></view>
+      <image wx:if="{{click}}" class="dropDown" src="/assets/img/dropDown-active.png" mode=""></image>
+      <image wx:else class="dropDown" src="/assets/img/dropDown.png"></image>
+    </view>
+  </view>
+   <!-- 仿picker选择栏 -->
+   <block class="picker_selector" wx:if="{{click}}">
+      <scroll-view scroll-y scroll-with-animation>
+        <view wx:for="{{devices}}" wx:key="index" data-device-id="{{item.deviceId}}" data-name="{{item.name || item.localName}}" bindtap="createBLEConnection" class="device_item" hover-class="device_item_hover">
+          <view style="font-size: 16px; color: #333;">
+          {{item.name}}</view>
+          <view style="font-size: 10px">信号强度: {{item.RSSI}}dBm ({{utils.max(0, item.RSSI + 100)}}%)</view>
+          <view style="font-size: 10px">UUID: {{item.deviceId}}</view>
+          <view style="font-size: 10px">Service数量: {{utils.len(item.advertisServiceUUIDs)}}</view>
+        </view>
+      </scroll-view>
+    </block>
+
+
+  <!-- 进入工作界面 -->
+  <view wx:if="{{connected}}" class="box_2">
+    <button bind:tap="enterWork" class="button_active">进入工作界面</button>
+  </view>
+  <view wx:else class="box_2">
+    <button bind:tap="enterWork"class="button">未连接</button>
+  </view>
+  <!-- 底行小字加群 -->
+  <view class="joinUs">
+    <image src="/assets/img/qq_icon.jpg"></image>
+    <text bindtap='join'>无线BMS 官方开发QQ群</text>
+  </view>
+</view>
+<!-- 导航栏 -->
+<view class="guide">
+  <view class="guide-item">
+    <image mode="widthFix" src="/assets/img/homePage-active.png"></image>
+    <view>首页</view>
+  </view>
+  <view class="guide-item">
+    <image bind:tap="onInstruction" mode="widthFix" src="/assets/img/instruction.png"></image>
+    <view>使用说明</view>
+  </view>
+</view>

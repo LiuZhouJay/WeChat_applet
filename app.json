@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/homePage/homePage",
+    "pages/instruction/instruction",
+    "pages/joinUs/joinUs",
+    "pages/control/control",
+    "pages/background/background"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "list": [
+      {"pagePath": "pages/control/control",
+       "text": "控制台",
+       "iconPath": "/assets/img/control.png",
+       "selectedIconPath": "/assets/img/control-active.png"},{
+        "pagePath": "pages/background/background",
+        "text": "后台",
+        "iconPath": "/assets/img/background.png",
+        "selectedIconPath": "/assets/img/background-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

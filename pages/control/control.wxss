@@ -1,0 +1,85 @@
+/* pages/control/control.wxss */
+/* pages/control/control.wxss */
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* vw */
+}
+
+.head, .bottom {
+  background-color: #ddd;
+}
+.bottom{
+  background-color: rgb(240,240,240);
+}
+
+.price, .active {
+  color: #23b8ff;
+}
+
+.guide {
+  display: flex;
+  justify-content: space-between;
+  width: 750rpx;
+  height: 185rpx;
+  position: absolute;
+  bottom: 0rpx;
+}
+.button-sp-area{
+  height: 200rpx;
+}
+.buttonStyle1{
+  position: relative; left: -187.5rpx; top: 0rpx;  height: 180rpx
+}
+.buttonStyle2{
+  position: relative; left: 187.5rpx; top: -180rpx;  height: 180rpx
+}
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+switch{
+  zoom: 1.2;
+}
+.switchStyle1{
+  position: relative; left: 404rpx; top: -149rpx
+}
+.switchStyle2{
+  position: relative; left: 270rpx; top: -60rpx
+}
+/* 导航栏 */
+.guide {
+  display: flex;
+  justify-content: space-between;
+  width: 750rpx;
+  height: 185rpx;
+  position: absolute;
+  bottom: 0rpx
+;
+}
+.guide-item {
+  text-align: center;
+  font-size: 14px;
+  width: 375rpx;
+  line-height: 1;
+  padding: 20px;
+}
+.guide-item image {
+  width: 70rpx;
+}
+
+/* 自定义弹出层样式 */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 150px;
+  z-index: 1000; /* 确保弹出层在最上层 */
+}

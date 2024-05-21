@@ -1,0 +1,20 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="container">
+ <view class="remind-box" wx:if="{{remind}}">
+ <!-- 未找到remind-box在wxss中出现,可省去 -->
+ </view>
+ <block wx:else>
+  <view class="content">
+    <video class="video" style="height: 1334rpx; width: 750rpx;" src="cloud://cloud1-6gc5dqf578ae6166.636c-cloud1-6gc5dqf578ae6166-1324760850/assets/video/video_2.mp4" loop="true"  autoplay="true" muted="true"></video>
+    <!-- <open-data class="logo" type="userAvatarUrl"></open-data> -->
+    <!-- <image class="wave" src="/image/bo.png" mode="aspectFill"></image>
+    <image class="wave wave-bg" src="/image/bo.png" mode="aspectFill"></image> -->
+   <view class="bd">
+    <view class="confirm-btn">
+     <button open-type="getUserInfo" lang="zh_CN" bindtap="onhomePage" >开始配置</button>
+    </view>
+   </view>
+  </view>
+ </block>
+</view>
+

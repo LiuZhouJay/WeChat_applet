@@ -1,0 +1,13 @@
+<!--pages/instruction/instruction.wxml-->
+<text>pages/instruction/instruction.wxml</text>
+<!-- 导航栏 -->
+<view class="guide">
+    <view class="guide-item">
+      <image bind:tap="onhomePage" mode="widthFix" src="/assets/img/homePage.png" ></image>
+      <view >首页</view>
+    </view>
+    <view class="guide-item">
+      <image mode="widthFix" src="/assets/img/instruction-active.png" ></image>
+      <view >使用说明</view>
+    </view>
+</view>

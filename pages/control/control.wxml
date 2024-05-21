@@ -1,0 +1,40 @@
+<!--pages/control/control.wxml-->
+<!--pages/control/control.wxml-->
+<view class="body">
+  <!-- 第一行 -->
+  <view class="button-sp-area">
+    <button class="buttonStyle1" style="width: 300rpx" bind:tap="onbutton" data-param="2">修改终端名称</button>
+    <switch class="switchStyle1"  checked="{{switch1Checked}}" bindchange="switch1Change"/>
+    <switch class="switchStyle2"  checked="{{switch1Checked}}" bindchange="switch1Change"/>
+  </view>
+  <!-- 第二行 -->
+  <view class="button-sp-area">
+    <button class="buttonStyle1" style="width: 300rpx" bind:tap="onbutton" data-param="1">修改终端mac地址</button>
+    <button class="buttonStyle2" style="width: 300rpx" bind:tap="restart" >重启</button>
+  </view>
+  <!-- 第三行 -->
+  <view class="button-sp-area">
+    <button class="buttonStyle1" style="width: 300rpx">升级</button>
+    <button class="buttonStyle2" style="width: 300rpx">发送ID</button>
+  </view>
+  <!-- 第四行 -->
+  <view class="button-sp-area">
+    <button class="buttonStyle1" style="width: 300rpx" bind:tap="closeBLEConnection">
+    断开连接</button>
+    <button class="buttonStyle2" style="width: 300rpx" bind:tap="Change_terminalmode">更改终端模式</button>
+  </view>
+  <!-- 第五行 -->
+  <view class="button-sp-area">
+    <button class="buttonStyle1" style="width: 300rpx">默认</button>
+    <button class="buttonStyle2" style="width: 300rpx">默认</button>
+  </view>
+</view> 
+
+<view animation="{{popup}}" style="display: {{showPopup ? 'block' : 'none'}};">
+  <view class="popup">
+    <input bindinput="inputContent" value="{{userInput}}" placeholder="请输入您的更改" />
+    <button bindtap="confirmInput" style=" top: 30rpx;">确认</button>
+    <button bindtap="hideInputPopup"style=" top: 60rpx;">取消</button>
+  </view>
+</view>
+

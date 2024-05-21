@@ -1,0 +1,62 @@
+/* pages/background/background.wxss */
+/* pages/background/background.wxss */
+/* pages/Background/Background.wxss */
+/* 顶部 */
+.centerText{
+  text-align: center;
+  justify-content: center;
+  width: 750rpx;
+  height: 70rpx;
+  display: flex;
+  box-sizing: border-box
+}
+/* 虚线 */
+.line {
+  width: 100%;
+  height: 1rpx;
+  border-top: 1rpx dashed #000; /* 黑色虚线 */
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+/* 信息交互面板 */
+scroll-view{
+  background-color: #000;
+}
+.wordStyle{
+  color: antiquewhite;
+}
+.firstText{
+  font-weight: bold;
+  font-size: 35rpx;
+  position: relative;
+  left:0rpx;
+}
+.dataText{
+  font-weight: lighter;
+  font-size: 35rpx;
+  height:auto;
+}
+/* 底部设置 */
+.pickerStyle{
+  display: inline-block;
+  width: 246rpx;
+  height: 50rpx;
+  border: 1rpx solid black;
+  border-radius: 20rpx;
+  text-align: center;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 150px;
+  z-index: 1000; /* 确保弹出层在最上层 */
+}
